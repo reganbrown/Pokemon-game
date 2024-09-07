@@ -46,9 +46,11 @@ main {
   height: 100px;
   width: 100px;
   border-radius: 50%;
-  background-color: $Red;
   color: white;
   border: none;
+  background-image: url("../assets/Unknown.png");
+  background-position: center;
+  background-size: cover;
 }
 
 .winner-box {

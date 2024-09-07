@@ -1,0 +1,13 @@
+@use "./partials/global";
+@use "./partials/mixins" as *;
+@use "./partials/variables" as *;
+
+h1 {
+  color: white;
+  padding: $Padding-Standard;
+}
+
+p {
+  color: white;
+  padding: $Padding-Standard;
+}
