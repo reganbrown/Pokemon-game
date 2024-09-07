@@ -29,33 +29,44 @@ main {
   display: flex;
   flex-direction: column;
   justify-content: center;
-  width: 120px;
+  width: 70px;
   border-radius: 10px;
+  @include breakpoint-phone {
+    width: 100px;
+  }
+  @include breakpoint-tablet {
+    width: 150px;
+  }
   &__name {
-    text-align: center;
+    display: none;
+    @include breakpoint-phone {
+      display: flex;
+      align-self: center;
+    }
   }
   &__type {
-    text-align: center;
+    display: none;
+    @include breakpoint-phone {
+      display: flex;
+      align-self: center;
+    }
   }
 }
 
 .pokemon-card-green,
 .pokemon-card-green-PC {
-  position: relative;
   background-color: green;
   border-radius: 20px;
 }
 
 .pokemon-card-red,
 .pokemon-card-red-PC {
-  position: relative;
   background-color: $Red;
   border-radius: 20px;
 }
 
 .pokemon-card-blue,
 .pokemon-card-blue-PC {
-  position: relative;
   background-color: $Blue;
   border-radius: 20px;
 }

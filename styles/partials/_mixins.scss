@@ -1,5 +1,10 @@
 @use "./variables" as *;
 
+@mixin breakpoint-phone {
+  @media (min-width: $phone-screen) {
+    @content;
+  }
+}
 @mixin breakpoint-tablet {
   @media (min-width: $tablet-screen) {
     @content;
