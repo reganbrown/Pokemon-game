@@ -117,7 +117,6 @@ function choiceBulb() {
   pokemonStarterRedEl.classList.remove("pokemon-card-active");
   pokemonStarterBlueEl.classList.remove("pokemon-card-active");
   computerChoice();
-  console.log(compChoice);
   if (compChoice === 1) {
     battleField.innerHTML = "";
     const battleMessage = "lose!";
@@ -149,7 +148,6 @@ function choiceChar() {
   pokemonStarterRedEl.classList.add("pokemon-card-active");
   pokemonStarterBlueEl.classList.remove("pokemon-card-active");
   computerChoice();
-  console.log(compChoice);
   if (compChoice === 2) {
     battleField.innerHTML = "";
     const battleMessage = "lose!";
