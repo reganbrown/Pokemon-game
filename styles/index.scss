@@ -5,6 +5,7 @@
 .pokemon-starters {
   display: flex;
   justify-content: space-around;
+  flex-wrap: wrap;
 }
 .pokemon-card {
   margin: $Padding-Standard;
@@ -17,4 +18,31 @@
   &__name {
     text-align: center;
   }
+  &__type {
+    text-align: center;
+  }
+}
+
+.input {
+  width: 100vw;
+  display: flex;
+  justify-content: space-around;
+}
+.bulb,
+.char,
+.squir {
+  margin-top: $Padding-Standard;
+  height: 100px;
+  width: 100px;
+  border-radius: 50%;
+  background-color: $Red;
+  color: white;
+  border: none;
+}
+
+.winner-box {
+  width: 100vw;
+  text-align: center;
+  color: white;
+  font-size: 60px;
 }
