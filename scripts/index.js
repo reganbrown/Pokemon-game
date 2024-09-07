@@ -18,7 +18,7 @@ const playButtons = document.querySelector(".input");
 // API and regional pokemon
 const pokemonAPI = "https://pokeapi.co/api/v2/pokemon/";
 const kantoPokemon = ["1", "4", "7"];
-const johotoPokemon = ["152", "155", "158"];
+const johtoPokemon = ["152", "155", "158"];
 
 // battle / win / lose box
 const battleBox = document.createElement("p");
@@ -27,7 +27,7 @@ const winnerBox = document.createElement("div");
 winnerBox.classList.add("winner-box");
 
 // initialize computer random choice
-var compChoice = (Math.random() * johotoPokemon.length) | 0;
+var compChoice = (Math.random() * johtoPokemon.length) | 0;
 
 // create player grass type pokemon
 const fetchPokemonGreen = async (pokeURL) => {
@@ -120,8 +120,8 @@ function choiceBulb() {
     const battleMessage = "lose!";
     battleBox.innerText = battleMessage;
     battleField.appendChild(battleBox);
-    if (johotoPokemon[1] !== "157") {
-      johotoPokemon[1] = (Number(johotoPokemon[1]) + 1).toString();
+    if (johtoPokemon[1] !== "157") {
+      johtoPokemon[1] = (Number(johtoPokemon[1]) + 1).toString();
     }
   } else if (compChoice === 2) {
     battleField.innerHTML = "";
@@ -149,8 +149,8 @@ function choiceChar() {
     const battleMessage = "lose!";
     battleBox.innerText = battleMessage;
     battleField.appendChild(battleBox);
-    if (johotoPokemon[2] !== "160") {
-      johotoPokemon[2] = (Number(johotoPokemon[2]) + 1).toString();
+    if (johtoPokemon[2] !== "160") {
+      johtoPokemon[2] = (Number(johtoPokemon[2]) + 1).toString();
     }
   } else if (compChoice === 0) {
     battleField.innerHTML = "";
@@ -178,8 +178,8 @@ function choiceSquir() {
     const battleMessage = "lose!";
     battleBox.innerText = battleMessage;
     battleField.appendChild(battleBox);
-    if (johotoPokemon[0] !== "154") {
-      johotoPokemon[0] = (Number(johotoPokemon[0]) + 1).toString();
+    if (johtoPokemon[0] !== "154") {
+      johtoPokemon[0] = (Number(johtoPokemon[0]) + 1).toString();
     }
   } else if (compChoice === 1) {
     battleField.innerHTML = "";
@@ -280,15 +280,15 @@ const fetchPokemonRedPC = async (pokeURL) => {
 };
 
 function printPokemonPC() {
-  fetchPokemonGreenPC(pokemonAPI + johotoPokemon[0]);
-  fetchPokemonRedPC(pokemonAPI + johotoPokemon[1]);
-  fetchPokemonBluePC(pokemonAPI + johotoPokemon[2]);
+  fetchPokemonGreenPC(pokemonAPI + johtoPokemon[0]);
+  fetchPokemonRedPC(pokemonAPI + johtoPokemon[1]);
+  fetchPokemonBluePC(pokemonAPI + johtoPokemon[2]);
   checkPlayerWin();
   checkCompWin();
 }
 
 function computerChoice() {
-  compChoice = (Math.random() * johotoPokemon.length) | 0;
+  compChoice = (Math.random() * johtoPokemon.length) | 0;
 }
 
 // Winner check
@@ -309,9 +309,9 @@ function checkPlayerWin() {
 // Loser check
 function checkCompWin() {
   if (
-    johotoPokemon[0] == "154" &&
-    johotoPokemon[1] == "157" &&
-    johotoPokemon[2] == "160"
+    johtoPokemon[0] == "154" &&
+    johtoPokemon[1] == "157" &&
+    johtoPokemon[2] == "160"
   ) {
     const winner = "LOSER!";
     winnerBox.innerText = winner;
