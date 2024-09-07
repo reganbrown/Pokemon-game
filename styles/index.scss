@@ -3,10 +3,15 @@
 @use "./partials/variables" as *;
 
 main {
+  padding-top: $Padding-Standard;
   height: 85vh;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
+
+  @include breakpoint-tablet {
+    height: 88vh;
+  }
 }
 .computer-starters {
   display: flex;
@@ -34,6 +39,27 @@ main {
   }
 }
 
+.pokemon-card-green,
+.pokemon-card-green-PC {
+  position: relative;
+  background-color: green;
+  border-radius: 20px;
+}
+
+.pokemon-card-red,
+.pokemon-card-red-PC {
+  position: relative;
+  background-color: $Red;
+  border-radius: 20px;
+}
+
+.pokemon-card-blue,
+.pokemon-card-blue-PC {
+  position: relative;
+  background-color: $Blue;
+  border-radius: 20px;
+}
+
 .input {
   width: 100vw;
   display: flex;
@@ -48,7 +74,8 @@ main {
   border-radius: 50%;
   color: white;
   border: none;
-  background-image: url("../assets/Unknown.png");
+  background-image: url("../assets/Pokebola-pokeball-png-0.png"),
+    url("../assets/Unknown.png");
   background-position: center;
   background-size: cover;
 }
@@ -58,4 +85,15 @@ main {
   text-align: center;
   color: white;
   font-size: 60px;
+}
+
+.battle-box {
+  width: 100vw;
+  text-align: center;
+  color: white;
+  font-size: 50px;
+}
+
+.pokemon-card__img {
+  border-bottom: solid 3px grey;
 }
