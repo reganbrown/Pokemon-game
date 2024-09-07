@@ -1,0 +1,20 @@
+@use "./partials/global";
+@use "./partials/mixins" as *;
+@use "./partials/variables" as *;
+
+.pokemon-starters {
+  display: flex;
+  justify-content: space-around;
+}
+.pokemon-card {
+  margin: $Padding-Standard;
+  background: $White;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  width: 120px;
+  border-radius: 10px;
+  &__name {
+    text-align: center;
+  }
+}

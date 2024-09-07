@@ -1,0 +1,115 @@
+@use "./variables" as *;
+@use "./mixins" as *;
+
+// global resets
+html {
+  box-sizing: border-box;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: inherit;
+}
+
+* {
+  margin: $reset;
+  padding: $reset;
+}
+
+// site font
+
+body {
+  font-family: "Pixelify Sans", sans-serif;
+  background-color: $Navy;
+  width: 100%;
+}
+
+a {
+  text-decoration: none;
+}
+
+.header {
+  background-color: $Red;
+}
+
+.nav-bar {
+  width: 100vw;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background-color: $Red;
+
+  @include breakpoint-tablet {
+    flex-direction: row;
+    justify-content: flex-start;
+    align-items: flex-end;
+  }
+  @include breakpoint-desktop {
+    max-width: $max-width;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  &__left {
+    padding-top: $Padding-Standard;
+    padding-bottom: $Padding-Standard;
+    display: flex;
+    align-items: flex-end;
+    height: 50%;
+    @include breakpoint-tablet {
+      height: auto;
+      padding: $Padding-Large;
+    }
+
+    @include breakpoint-desktop {
+      padding: $Padding-Large $reset;
+    }
+  }
+
+  &__right {
+    display: flex;
+    justify-content: center;
+    height: 50%;
+    width: 100%;
+    @include breakpoint-tablet {
+      height: auto;
+      width: auto;
+      padding-left: $Padding-Large;
+    }
+  }
+
+  &__title {
+    color: $White;
+    font-weight: 500;
+  }
+
+  &__list {
+    display: flex;
+    list-style-type: none;
+  }
+
+  &__item {
+    width: 50vw;
+    text-align: center;
+    padding-bottom: $Padding-Standard;
+    @include breakpoint-tablet {
+      width: 10vw;
+      padding-bottom: $Padding-Large;
+    }
+  }
+
+  &__link {
+    color: $White;
+    border-bottom: 3px $Red solid;
+
+    &:hover {
+      border-bottom: 3px $White solid;
+    }
+
+    &:focus {
+      border-bottom: 3px $White solid;
+    }
+  }
+}
