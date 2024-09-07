@@ -113,6 +113,9 @@ function printPokemon() {
 
 // I choose you, Bulbasaur!
 function choiceBulb() {
+  pokemonStarterGreenEl.classList.add("pokemon-card-active");
+  pokemonStarterRedEl.classList.remove("pokemon-card-active");
+  pokemonStarterBlueEl.classList.remove("pokemon-card-active");
   computerChoice();
   console.log(compChoice);
   if (compChoice === 1) {
@@ -142,6 +145,9 @@ function choiceBulb() {
 
 // I choose you, Charmander!
 function choiceChar() {
+  pokemonStarterGreenEl.classList.remove("pokemon-card-active");
+  pokemonStarterRedEl.classList.add("pokemon-card-active");
+  pokemonStarterBlueEl.classList.remove("pokemon-card-active");
   computerChoice();
   console.log(compChoice);
   if (compChoice === 2) {
@@ -171,6 +177,9 @@ function choiceChar() {
 
 // I choose you, Squirtle!!
 function choiceSquir() {
+  pokemonStarterGreenEl.classList.remove("pokemon-card-active");
+  pokemonStarterRedEl.classList.remove("pokemon-card-active");
+  pokemonStarterBlueEl.classList.add("pokemon-card-active");
   computerChoice();
   console.log(compChoice);
   if (compChoice === 0) {
@@ -289,6 +298,19 @@ function printPokemonPC() {
 
 function computerChoice() {
   compChoice = (Math.random() * johtoPokemon.length) | 0;
+  if (compChoice === 0) {
+    pokemonStarterGreenPC.classList.add("pokemon-card-active-pc");
+    pokemonStarterRedPC.classList.remove("pokemon-card-active-pc");
+    pokemonStarterBluePC.classList.remove("pokemon-card-active-pc");
+  } else if (compChoice === 1) {
+    pokemonStarterGreenPC.classList.remove("pokemon-card-active-pc");
+    pokemonStarterRedPC.classList.add("pokemon-card-active-pc");
+    pokemonStarterBluePC.classList.remove("pokemon-card-active-pc");
+  } else {
+    pokemonStarterGreenPC.classList.remove("pokemon-card-active-pc");
+    pokemonStarterRedPC.classList.remove("pokemon-card-active-pc");
+    pokemonStarterBluePC.classList.add("pokemon-card-active-pc");
+  }
 }
 
 // Winner check
@@ -298,6 +320,12 @@ function checkPlayerWin() {
     kantoPokemon[1] == "6" &&
     kantoPokemon[2] == "9"
   ) {
+    pokemonStarterGreenEl.classList.remove("pokemon-card-active");
+    pokemonStarterRedEl.classList.remove("pokemon-card-active");
+    pokemonStarterBlueEl.classList.remove("pokemon-card-active");
+    pokemonStarterGreenPC.classList.remove("pokemon-card-active-pc");
+    pokemonStarterRedPC.classList.remove("pokemon-card-active-pc");
+    pokemonStarterBluePC.classList.remove("pokemon-card-active-pc");
     const winner = "WINNER!";
     winnerBox.innerText = winner;
     pokemonStartersEl.appendChild(winnerBox);
@@ -313,6 +341,12 @@ function checkCompWin() {
     johtoPokemon[1] == "157" &&
     johtoPokemon[2] == "160"
   ) {
+    pokemonStarterGreenEl.classList.remove("pokemon-card-active");
+    pokemonStarterRedEl.classList.remove("pokemon-card-active");
+    pokemonStarterBlueEl.classList.remove("pokemon-card-active");
+    pokemonStarterGreenPC.classList.remove("pokemon-card-active-pc");
+    pokemonStarterRedPC.classList.remove("pokemon-card-active-pc");
+    pokemonStarterBluePC.classList.remove("pokemon-card-active-pc");
     const winner = "LOSER!";
     winnerBox.innerText = winner;
     pokemonStartersEl.appendChild(winnerBox);

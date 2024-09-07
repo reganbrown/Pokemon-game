@@ -71,6 +71,16 @@ main {
   border-radius: 20px;
 }
 
+.pokemon-card-active {
+  position: relative;
+  bottom: 20px;
+}
+
+.pokemon-card-active-pc {
+  position: relative;
+  top: 20px;
+}
+
 .input {
   width: 100vw;
   display: flex;
